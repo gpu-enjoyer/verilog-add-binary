@@ -5,7 +5,14 @@ module add_tb;
 
     logic c, a, b, c_out, sum;
 
-    // connect module
+    const logic [7:0] CParams      = 8'b0000_1111;
+    const logic [7:0] AParams      = 8'b0011_0011;
+    const logic [7:0] BParams      = 8'b0101_0101;
+
+    const logic [7:0] COutExpected = 8'b0001_0111;
+    const logic [7:0] SumExpected  = 8'b0110_1001;
+
+    // connect module "add"
     add test (
         .c(c),
         .a(a),
@@ -14,32 +21,30 @@ module add_tb;
         .sum(sum)
     );
 
-    // edit a, b;
-    // module works (10 tics);
-    // get result
-    task automatic run_test;
-        input c_in, a_in, b_in;
-        begin
-            c = c_in;
-            a = a_in;
-            b = b_in;
-            #10;
-            $display(" %b+%b+%b=%b%b", c, a, b, c_out, sum);
-        end
-    endtask
-
-    // main function
+    // main function:
+    //  edit input parameters;
+    //  module works 10 tics;
+    //  get result;
+    //  assert();
     initial
         begin
             $display("\nadd module:\n");
-            run_test(0, 0, 0);
-            run_test(0, 0, 1);
-            run_test(0, 1, 0);
-            run_test(0, 1, 1);
-            run_test(1, 0, 0);
-            run_test(1, 0, 1);
-            run_test(1, 1, 0);
-            run_test(1, 1, 1);
+            for (
+                int i = 0; i < 8; ++i
+            )
+                begin
+                    c = CParams[i];
+                    a = AParams[i];
+                    b = BParams[i];
+                    #10;
+                    $display(" %b+%b+%b=%b%b", c, a, b, c_out, sum);
+                    assert(c_out === COutExpected[i] & sum === SumExpected[i]);
+                    else
+                        begin
+                            $display("  -unexpected\n");
+                            $fatal;
+                        end
+                end
         end
 
 endmodule
