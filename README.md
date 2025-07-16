@@ -22,6 +22,7 @@ test/
 
 .github/workflows/
     test.yml
+    lint.yml
 
 Makefile
 ```

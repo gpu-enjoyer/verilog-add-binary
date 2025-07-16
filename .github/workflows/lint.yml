@@ -1,0 +1,15 @@
+
+name: Lint checks
+on: [ push, pull_request ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: chipsalliance/verible-linter-action@main
+        with:
+          paths: |
+            code
+            test
+          github_token: ${{ secrets.GITHUB_TOKEN }}
