@@ -1,0 +1,19 @@
+
+name: Build and Run Testbenches
+on: [ push, pull_request ]
+
+jobs:
+
+  build_run:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/hdl/iverilog:latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+      - name: Install make
+        run: |
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends make
+      - name: Build and Run
+        run: make
