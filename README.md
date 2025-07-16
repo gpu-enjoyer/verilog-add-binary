@@ -1,49 +1,24 @@
 
-# Verilog Logic Modules
+# Verilog Modules
 
 ## Run
 
 ```shell
     make
+    ./gen_svg.sh
 ```
 
-## Structure 
+## Modules
 
-```
-code/
-    ADDition
-    IMPLication
-    NOT_IMPLication
-    PIERCE arrow 
-    SHEFFER stroke
-
-test/
-    test-benches ..
-
-.github/workflows/
-    test.yml
-    lint.yml
-
-Makefile
-```
+| code                                 | scheme                        |
+|:------------------------------------:|:-----------------------------:|
+| [code/add.sv](code/add.sv)           | ![add](svg/add.svg)           |
+| [code/impl.sv](code/impl.sv)         | ![impl](svg/impl.svg)         |
+| [code/not_impl.sv](code/not_impl.sv) | ![not_impl](svg/not_impl.svg) |
+| [code/pierce.sv](code/pierce.sv)     | ![pierce](svg/pierce.svg)     |
+| [code/sheffer.sv](code/sheffer.sv)   | ![sheffer](svg/sheffer.svg)   |
 
 ## Todo
 
-- [ ] Yolo
-- [ ] Code Quote
-
-## Notes
-
-1. when the command `uses: actions/checkout@v4` is run  
-    GitHub clones the repository into:
-    ```
-    /home/runner/work/
-    └── <repo-name>/
-        └── <repo-name>/
-    ```
-
-2. "image" of OS + iverilog
-    ```
-    container:
-        image: ghcr.io/hdl/iverilog:latest
-    ```
+- [ ] CI: yosys
+- [ ] code quote
