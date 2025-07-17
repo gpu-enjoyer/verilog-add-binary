@@ -8,7 +8,7 @@ module sheffer_tb;
     const logic [3:0] AParams   = 4'b0011;
     const logic [3:0] BParams   = 4'b0101;
 
-    const logic [3:0] CExpected = 4'b1110;
+    const logic [3:0] CExpected = 4'b1111;
 
     sheffer test (
         .a(a),
