@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# todo
+# edit:
 source "$FPGA_TOOLS/repos/oss-cad-suite/environment"
 
 names=(add impl not_impl pierce sheffer)

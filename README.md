@@ -1,11 +1,19 @@
 
-# Verilog Modules
+# Verilog Basic Modules
 
 ## Run
 
 ```shell
     make
+
+    # check console output
+
+    # install Yosys
+    # edit "source" in gen_svg.sh
+
     ./gen_svg.sh
+
+    # check readme.md table
 ```
 
 ## Modules
@@ -20,5 +28,5 @@
 
 ## Todo
 
-- [ ] CI: yosys
+- [ ] CI: Yosys
 - [ ] code quote
