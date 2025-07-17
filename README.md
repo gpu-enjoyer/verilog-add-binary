@@ -4,12 +4,16 @@
 ## Run
 
 ```shell
+    # install iverilog
+    # install verible
+
     make
 
     # check console output
 
     # install Yosys
-    # edit "source" in gen_svg.sh
+    # install npm
+    # gen_svg.sh: edit $yosys_env_dir 
 
     ./gen_svg.sh
 
@@ -18,13 +22,19 @@
 
 ## Modules
 
-| code                                 | scheme                        |
-|:------------------------------------:|:-----------------------------:|
-| [code/add.sv](code/add.sv)           | ![add](svg/add.svg)           |
-| [code/impl.sv](code/impl.sv)         | ![impl](svg/impl.svg)         |
-| [code/not_impl.sv](code/not_impl.sv) | ![not_impl](svg/not_impl.svg) |
-| [code/pierce.sv](code/pierce.sv)     | ![pierce](svg/pierce.svg)     |
-| [code/sheffer.sv](code/sheffer.sv)   | ![sheffer](svg/sheffer.svg)   |
+| code                         | scheme                            |
+|:----------------------------:|:---------------------------------:|
+| [add](code/add.sv)           | ![add](img/svg/add.svg)           |
+| [impl](code/impl.sv)         | ![impl](img/svg/impl.svg)         |
+| [not_impl](code/not_impl.sv) | ![not_impl](img/svg/not_impl.svg) |
+| [pierce](code/pierce.sv)     | ![pierce](img/svg/pierce.svg)     |
+| [sheffer](code/sheffer.sv)   | ![sheffer](img/svg/sheffer.svg)   |
+
+## CI demo
+
+| good                         | error                          |
+|:----------------------------:|:------------------------------:|
+| ![good](img/screen/good.png) | ![error](img/screen/error.png) |
 
 ## Todo
 
